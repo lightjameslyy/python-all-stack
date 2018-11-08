@@ -1,4 +1,5 @@
 import pygame
+from plane_sprites import *
 
 pygame.init()
 
@@ -25,6 +26,14 @@ clock = pygame.time.Clock()
 # 1. hero初始位置
 hero_rect = pygame.Rect(150, 300, 102, 126)
 
+
+# 创建敌机精灵
+enemy = GameSprite("./images/enemy1.png")
+enemy1 = GameSprite("./images/enemy1.png", 2)
+# 创建敌机精灵组
+enemy_group = pygame.sprite.Group(enemy, enemy1)
+
+
 # 游戏循环，意味着游戏的开始
 while True:
     # 设置游戏循环内部执行频率
@@ -47,6 +56,12 @@ while True:
     # 3. blit
     screen.blit(bg, (0, 0))
     screen.blit(hero, hero_rect)
+
+    # 调用精灵组的两个方法
+    # update
+    enemy_group.update()
+    # draw
+    enemy_group.draw(screen)
 
     # 4. update
     pygame.display.update()
