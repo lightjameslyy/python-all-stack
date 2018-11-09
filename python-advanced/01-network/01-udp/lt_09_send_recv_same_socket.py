@@ -17,6 +17,10 @@ def main():
     # udp_socket.sendto(send_data.encode("utf-8"), ("10.2.152.29", 8080))
     udp_socket.sendto(send_data.encode("utf-8"), (dest_ip, dest_port))
 
+    # 接收回送过来的数据
+    recv_data = udp_socket.recvfrom(1024)
+    print(recv_data)
+
     # 关闭套接字
     udp_socket.close()
 
