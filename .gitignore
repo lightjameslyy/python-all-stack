@@ -111,3 +111,6 @@ dmypy.json
 
 # PyCharm
 .idea
+
+# User defined
+html/
