@@ -140,3 +140,28 @@ insert into goods_brands(name) values ('海尔'),('清华同方'),('神舟');
 -- 在 goods 数据表中写入任意记录
 insert into goods (name,cate_id,brand_name,price)
 values('LaserJet Pro P1606dn 黑白激光打印机', 12, 4,'1849');
+
+-- 查询所有商品的详细信息 (通过内连接)
+select g.id,g.name,c.name,b.name,g.price from goods as g
+inner join goods_cates as c on g.cate_id=c.id
+inner join goods_brands as b on g.brand_id=b.id;
+
+-- 查询所有商品的详细信息 (通过左连接)
+select g.id,g.name,c.name,b.name,g.price from goods as g
+left join goods_cates as c on g.cate_id=c.id
+left join goods_brands as b on g.brand_id=b.id;
+
+-- 给brand_id 添加外键约束成功
+alter table goods add foreign key (brand_id) references goods_brands(id);
+-- 给cate_id 添加外键失败
+alter table goods add foreign key (cate_id) references goods_cates(id);
+
+-- 如何取消外键约束
+
+-- 需要先获取外键约束名称,该名称系统会自动生成,可以通过查看表创建语句来获取名称
+show create table goods;
+-- 获取名称之后就可以根据名称来删除外键约束
+alter table goods drop foreign key 外键名称;
+
+-- 在实际开发中,很少会使用到外键约束,会极大的降低表更新的效率
+-- 在应用程序的逻辑中实现外键的约束可能效率更高。
