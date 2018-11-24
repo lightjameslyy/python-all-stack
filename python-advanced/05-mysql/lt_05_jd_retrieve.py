@@ -8,7 +8,7 @@ class JD(object):
     def show_all_items(self):
         """显示所有商品信息"""
         conn = connect(host='localhost', port=3306, user='root',
-                       password='liutao123', database='jing_dong', charset='utf8')
+                       password='root', database='jing_dong', charset='utf8')
         cs1 = conn.cursor()
         count = cs1.execute('select * from goods')
         print("查询到%d条数据:" % count)
@@ -23,7 +23,7 @@ class JD(object):
     def show_cates(self):
         """显示所有商品分类"""
         conn = connect(host='localhost', port=3306, user='root',
-                       password='liutao123', database='jing_dong', charset='utf8')
+                       password='root', database='jing_dong', charset='utf8')
         cs1 = conn.cursor()
         count = cs1.execute('select * from goods_cates')
         print("查询到%d条数据:" % count)
@@ -38,7 +38,7 @@ class JD(object):
     def show_brands(self):
         """显示所有商品品牌"""
         conn = connect(host='localhost', port=3306, user='root',
-                       password='liutao123', database='jing_dong', charset='utf8')
+                       password='root', database='jing_dong', charset='utf8')
         cs1 = conn.cursor()
         count = cs1.execute('select * from goods_brands')
         print("查询到%d条数据:" % count)

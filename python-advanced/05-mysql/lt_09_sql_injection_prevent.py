@@ -5,7 +5,7 @@ class JD(object):
     def __init__(self):
         # 创建Connection连接
         self.conn = connect(host='localhost', port=3306, user='root',
-                            password='liutao123', database='jing_dong', charset='utf8')
+                            password='root', database='jing_dong', charset='utf8')
         # 获得Cursor对象
         self.cursor = self.conn.cursor()
 
