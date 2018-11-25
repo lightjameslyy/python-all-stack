@@ -2,6 +2,7 @@ import socket
 import select
 import re
 
+HTML_ROOT_PATH = "../../../data/html"
 
 def serve_client(client_socket, request):
     """为客户端提供服务并返回数据"""
@@ -29,7 +30,7 @@ def serve_client(client_socket, request):
     # 2. 返回http格式的数据给浏览器
 
     try:
-        f = open("html" + file_name, "rb")
+        f = open(HTML_ROOT_PATH + file_name, "rb")
     except:
         response = "HTTP/1.1 404 NOT FOUND\r\n"
         response += "\r\n"
@@ -79,6 +80,7 @@ def main():
         for fd, event in fd_event_list:
             # http server等待新的客户端到来
             if fd == http_server_socket.fileno():
+                # 为什么此处不用try？因为if判断成功意味着accept成功返回了
                 new_socket, client_addr = http_server_socket.accept()
                 epl.register(new_socket.fileno(), select.EPOLLIN)
                 fd_event_dict[new_socket.fileno()] = new_socket

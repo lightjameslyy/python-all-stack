@@ -5,6 +5,7 @@ from gevent import monkey
 
 monkey.patch_all()
 
+HTML_ROOT_PATH = "../../../data/html"
 
 def serve_client(client_socket):
     """为客户端提供服务并返回数据"""
@@ -33,7 +34,7 @@ def serve_client(client_socket):
     # 2. 返回http格式的数据给浏览器
 
     try:
-        f = open("html" + file_name, "rb")
+        f = open(HTML_ROOT_PATH + file_name, "rb")
     except:
         response = "HTTP/1.1 404 NOT FOUND\r\n"
         response += "\r\n"

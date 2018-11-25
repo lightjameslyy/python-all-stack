@@ -1,8 +1,9 @@
 import socket
 import re
-import threading
+import multiprocessing
 
 HTML_ROOT_PATH = "../../../data/html"
+
 
 def serve_client(client_socket):
     """为客户端提供服务并返回数据"""
@@ -51,7 +52,7 @@ def serve_client(client_socket):
         # body
         client_socket.send(html_content)
 
-    # 3. 关闭套接字
+    # 3. 子进程关闭套接字
     client_socket.close()
 
 
@@ -73,11 +74,13 @@ def main():
         client_socket, client_addr = http_server_socket.accept()
 
         # 5. 为客户端服务
-        # 创建线程执行serve_client()
-        # 注意：传入的client_socket跟主进程中的client_socket是同一个对象，所以只在线程中关闭一次套接字即可
-        p = threading.Thread(target=serve_client, args=(client_socket,))
+        # 创建进程执行serve_client()
+        # 注意：传入的client_socket会拷贝到创建的进程，跟主进程中的client_socket不是同一个对象
+        p = multiprocessing.Process(target=serve_client, args=(client_socket,))
         p.start()
 
+        # 主进程关闭套接字，子进程关闭后才真正关闭
+        client_socket.close()
 
     # 6. 关闭套接字
     http_server_socket.close()

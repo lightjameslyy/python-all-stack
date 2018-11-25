@@ -1,5 +1,6 @@
 import socket
 
+INDEX_HTML_PATH = "../../../data/html/index.html"
 
 def serve_client(client_socket):
     """为客户端提供服务并返回数据"""
@@ -18,7 +19,7 @@ def serve_client(client_socket):
     # 2.1 准备给浏览器的数据--body
     # response += "<h1>Hello HTTP.</h1>"
 
-    f = open("html/index.html", "rb")
+    f = open(INDEX_HTML_PATH, "rb")
     html_content = f.read()
     f.close()
 
