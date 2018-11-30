@@ -9,6 +9,3 @@ def multiple_table():
         row += 1
 
 multiple_table()
-
-def func():
-    ...
