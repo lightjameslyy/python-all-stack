@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form action="" method="post">
+        <div>
+            <label for="username">User Name: </label>
+            <input type="text" name="username" id="username" />
+        </div>
+        <br />
+
+        <div>
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" />
+        </div>
+        <br />
+
+        <div>
+            <label for="">Gender: </label>
+            <input type="radio" name="gender" value="0" id="male"> <label for="male">male</label>
+            <input type="radio" name="gender" value="1" id="female"> <label for="female">female</label>
+        </div>
+        <br />
+
+        <div>
+            <label for="">Hobbies: </label>
+            <input type="checkbox" name="hobby" value="reading" id="reading"> <label for="reading">reading</label>
+            <input type="checkbox" name="hobby" value="programming" id="programming"> <label for="programming">programming</label>
+            <input type="checkbox" name="hobby" value="guitar" id="guitar"> <label for="guitar">guitar</label>
+            <input type="checkbox" name="hobby" value="running" id="running"> <label for="running">running</label>
+        </div>
+        <br />
+
+        <div>
+            <label for="">Avatar: </label>
+            <input type="file" name="avater" id="">
+        </div>
+        <br />
+
+        <div>
+            <label for="">Profile: </label>
+            <textarea name="profile" id="" cols="30" rows="10"></textarea>
+        </div>
+        <br />
+
+        <div>
+            <label for="">City: </label>
+            <select name="city" id="">
+                <option value="0">Beijing</option>
+                <option value="1">Shanghai</option>
+                <option value="2">Guangzhou</option>
+                <option value="3">Hangzhou</option>
+            </select>
+        </div>
+        <br />
+
+        <input type="hidden" name="hid01" value="11">
+
+        <div>
+            <input type="submit" value="Submit">
+            <!--
+                type=image不推荐使用，可能导致提交两次数据
+            -->
+            <!-- <input type="image" src="images/goods.jpg" alt=""> -->
+            <input type="reset" value="Reset">
+        </div>
+
+    </form>
+
+
+</body>
+
+</html>
