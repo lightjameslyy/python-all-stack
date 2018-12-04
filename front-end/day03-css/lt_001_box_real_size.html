@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>盒子的真实尺寸</title>
+    <style type="text/css">
+        .box01,
+        .box02,
+        .box03 {
+            width: 50px;
+            height: 50px;
+            background-color: lightskyblue;
+        }
+
+        .box02,
+        .box03 {
+            border: 50px solid #000;
+        }
+
+        .box03 {
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        real size of box:
+
+        width: width + border(left and right) + padding(left and right)
+
+        height: height + border(top and bottom) + padding(top and bottom)
+    -->
+
+    <div class="box01">1</div>
+    <br />
+    <div class="box02">2</div>
+    <br />
+    <div class="box03">3</div>
+
+</body>
+
+</html>

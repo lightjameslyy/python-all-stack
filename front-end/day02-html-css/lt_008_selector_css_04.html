@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>伪类和伪元素选择器</title>
+	<style type="text/css">
+		.link {
+			font-size: 30px;
+			text-decoration: none;
+			color: blue;
+		}
+
+		.link:hover {
+			color: green;
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		.box01,
+		.box02 {
+			font-size: 20px;
+		}
+
+		.box01::before {
+			content: "伪元素：before";
+			color: red;
+		}
+
+		.box02::after {
+			content: "伪元素：after";
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+
+	<a href="https://www.baidu.com" class="link">百度</a>
+
+	<div class="box01">This div 1.</div>
+	<div class="box02">This div 2.</div>
+
+</body>
+
+</html>

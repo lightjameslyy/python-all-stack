@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>margin使用技巧02</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        .box {
+            width: 202px;
+            height: 156px;
+            background-color: yellow;
+            margin: 50px auto;
+        }
+
+        .box div {
+            width: 200px;
+            height: 30px;
+            border: 1px solid green;
+            background-color: gold;
+            margin-top: -1px;
+            /* border-bottom: 0px; */
+        }
+
+        /* .box .last {
+            border-bottom: 1px solid green;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="last"></div>
+    </div>
+
+</body>
+
+</html>
