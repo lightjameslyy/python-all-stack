@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>元素类型：内联块元素</title>
+	<style type="text/css">
+		/*
+		内联块元素，也叫行内块元素，是新增的元素类型，现有元素没有归于此类别的，img和input元素的行为类似这种元素，但是也归类于内联元素，我们可以用display属性将块元素或者内联元素转化成这种元素。它们在布局中表现的行为：
+
+		支持全部样式
+		如果没有设置宽高，宽高由内容决定
+		盒子并在一行
+		代码换行，盒子会产生间距
+		子元素是内联块元素，父元素可以用text-align属性设置子元素水平对齐方式。
+		*/
+		.box {
+			width: 500px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 50px auto 0;
+			font-size: 0;
+		}
+
+		.box a {
+			background-color: gold;
+			width: 100px;
+			height: 50px;
+			margin: 20px;
+			padding: 10px;
+			font-size: 16px;
+			display: inline-block;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box">
+		<a href="#">链接文字一</a>
+		<a href="#">链接文字二</a>
+		<a href="#">链接文字三</a>
+		<a href="#">链接文字四</a>
+		<a href="#">链接文字五</a>
+	</div>
+
+
+</body>
+
+</html>
