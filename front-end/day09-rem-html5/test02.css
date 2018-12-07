@@ -1,0 +1,6 @@
+.box{
+	-webkit-transition:all 1s ease;
+	transition:all 1s ease;
+	-webkit-transform:rotate(45deg);
+	        transform:rotate(45deg);
+}
